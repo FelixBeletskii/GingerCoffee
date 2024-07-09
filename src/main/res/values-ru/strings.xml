@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_text">Добро пожаловать в Ginger Coffee</string>
+    <string name="welcome_text">Мы рады приветстовать Вас! Надеемся, что Вы найдете здесь то, что ищете.</string>
+    <string name="authorizationn">Авторизация</string>
+    <string name="registration_button">Нет аккаунта? Зарегистрироваться</string>
+    <string name="sign_in">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="auth_button">Уже есть аккаунт? Войти</string>
+</resources>

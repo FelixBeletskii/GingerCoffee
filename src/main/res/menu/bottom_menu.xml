@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/home"
+            android:title="Home"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_home"
+            android:orderInCategory="1"
+            />
+    <item android:id="@+id/report"
+        android:title="Report"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_report"
+        android:orderInCategory="1"
+        />
+    <item android:id="@+id/work"
+        android:title="Work mode"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_work"
+        android:orderInCategory="1"
+        />
+    <item android:id="@+id/drinks"
+        android:title="Drinks"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_coffee"
+        android:orderInCategory="1"
+        />
+</menu>
