@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="Drinks">
+        <item>Cappucino</item>
+        <item>Americano</item>
+
+        <item>Latte</item>
+
+        <item>Raf</item>
+
+        <item>Tea</item>
+        <item>Flat White</item>
+
+    </array>
+</resources>

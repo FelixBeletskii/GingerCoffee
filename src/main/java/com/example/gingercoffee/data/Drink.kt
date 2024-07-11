@@ -1,4 +1,4 @@
 package com.example.gingercoffee.data
 
-data class Drink(val imageId: Int, val title: String) {
+data class Drink(val title: String, val price: Int) {
 }
