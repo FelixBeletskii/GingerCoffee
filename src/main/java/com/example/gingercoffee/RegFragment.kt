@@ -17,13 +17,13 @@ class RegFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            dataModel.userData.observe(activity as LifecycleOwner,{
+          //  dataModel.selectedDrink.observe(activity as LifecycleOwner,{
 
-            })
+            }
 
 
             }
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

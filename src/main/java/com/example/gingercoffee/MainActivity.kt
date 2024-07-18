@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
-    private val FragmentsList = listOf(
+    private val FragmentsList: List<Fragment> = listOf(
             AvialiableDrinksFragment.newInstance(),
             PurchasedDrinksFragment.newInstance()
         )

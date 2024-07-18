@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gingercoffee.data.Drink
 import com.example.gingercoffee.data.model.DrinkAdapter
@@ -14,7 +15,7 @@ import com.example.gingercoffee.databinding.FragmentAvialiableDrinksBinding
 
 class AvialiableDrinksFragment : Fragment(), DrinkAdapter.Listener {
     private val adapter = DrinkAdapter(this)
-
+    private val model: DataModel by activityViewModels()
 
     lateinit var binding: FragmentAvialiableDrinksBinding
 
@@ -55,11 +56,8 @@ class AvialiableDrinksFragment : Fragment(), DrinkAdapter.Listener {
 
 
         override fun onClick(drink: Drink) {
-            Toast.makeText(
-                activity as AppCompatActivity,
-                "Нажали на ${drink.title}",
-                Toast.LENGTH_SHORT
-            ).show()
+            model.selectedDrink.value = drink
+
 
         }
 
