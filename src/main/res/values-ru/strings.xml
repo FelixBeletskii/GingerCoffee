@@ -8,4 +8,10 @@
     <string name="registration">Регистрация</string>
     <string name="sign_up">Зарегистрироваться</string>
     <string name="auth_button">Уже есть аккаунт? Войти</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти или зарегистрироваться</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="drinks">Напитки</string>
+    <string name="purchased">Заказы</string>
 </resources>

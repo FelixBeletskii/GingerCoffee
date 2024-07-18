@@ -16,21 +16,21 @@ class LogActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityLogBinding.inflate(layoutInflater)
         setContentView(bind.root)
-        openFrag(AuthFragment(), R.id.place_holder)
+        openFrag(AuthFragment(), R.id.view_pager)
         var AuthIsActive = true
 
 
         with(bind) {
             btnToReg.setOnClickListener {
                 if (AuthIsActive) {
-                    openFrag(RegFragment(), R.id.place_holder)
+                    openFrag(RegFragment(), R.id.view_pager)
                     AuthIsActive = false
                     btnToReg.setText(R.string.auth_button)
 
                     btnAuth.setText(R.string.sign_up)
 
                 } else {
-                    openFrag(AuthFragment(), R.id.place_holder)
+                    openFrag(AuthFragment(), R.id.view_pager)
                     AuthIsActive = true
                     btnToReg.setText(R.string.registration_button)
 
