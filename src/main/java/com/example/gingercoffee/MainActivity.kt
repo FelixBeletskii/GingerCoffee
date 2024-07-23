@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding) {
-            ivMenu.setOnClickListener {
+            actionBar.ivMenu.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
             }
             viewPager.adapter = adapter
