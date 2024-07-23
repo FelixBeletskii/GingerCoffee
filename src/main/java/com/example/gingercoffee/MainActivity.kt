@@ -1,19 +1,24 @@
 package com.example.gingercoffee
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gingercoffee.data.Drink
-import com.example.gingercoffee.data.model.DrinkAdapter
+import com.example.gingercoffee.data.ViewPagerAdapter
 import com.example.gingercoffee.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity : AppCompatActivity(), DrinkAdapter.Listener {
+class MainActivity : AppCompatActivity() {
 
-    private val adapter = DrinkAdapter(this)
+    private val FragmentsList: List<Fragment> = listOf(
+            AvialiableDrinksFragment.newInstance(),
+            PurchasedDrinksFragment.newInstance()
+        )
+    private val tabList = listOf(
+        "Drinks", "Purchased"
+    )
+    val adapter = ViewPagerAdapter(this, FragmentsList)
+
 
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,13 +27,16 @@ class MainActivity : AppCompatActivity(), DrinkAdapter.Listener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         with(binding) {
-            ivMenu.setOnClickListener {
+            actionBar.ivMenu.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
             }
-        }
-        init()
-        openFrag(RecyclerViewFragment(),R.id.place_holder_main)
+            viewPager.adapter = adapter
+            TabLayoutMediator(tabLayout, viewPager) { tab, pos ->
+                tab.text = tabList[pos]
+            }.attach()
+            //openFrag(AvialiableDrinksFragment(),R.id.place_holder)
 
+        }
     }
     
 
@@ -37,24 +45,7 @@ class MainActivity : AppCompatActivity(), DrinkAdapter.Listener {
 
     }
 
-    fun init() {
-        val drinksList: Array<String> = resources.getStringArray(R.array.Drinks)
-
-        binding.apply {
-            recycler.layoutManager = LinearLayoutManager(this@MainActivity)
-            recycler.adapter = adapter
-
-            for (i in 0 until drinksList.size) {
-                val drink = Drink(drinksList[i])
-                drink.countDrink(drink.title)
-                adapter.addDrink(drink)
-            }
-
-        }
     }
 
-    override fun onClick(drink: Drink) {
-          Toast.makeText(this,"Нажали на ${drink.title}",Toast.LENGTH_SHORT).show()
 
-    }
-    }
+

@@ -48,5 +48,9 @@ class DrinkAdapter(val listener: Listener): RecyclerView.Adapter<DrinkAdapter.Dr
         fun onClick(drink:Drink)
 
     }
+    fun removeDrink(drink: Drink){
+        drinkList.remove(drink)
+        notifyDataSetChanged()
+    }
 
 }
