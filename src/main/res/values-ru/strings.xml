@@ -14,4 +14,7 @@
     <string name="welcome">Добро пожаловать!</string>
     <string name="drinks">Напитки</string>
     <string name="purchased">Заказы</string>
+    <string name="welcome_home">Добро пожаловать на главную страницу!</string>
+    <string name="report_main">Здесь будут ваши отчеты</string>
+    <string name="drinks_main">Здесь будут приготовленные Вам напитки</string>
 </resources>

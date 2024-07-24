@@ -1,51 +1,65 @@
 package com.example.gingercoffee
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.example.gingercoffee.data.ViewPagerAdapter
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.gingercoffee.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
-
-    private val FragmentsList: List<Fragment> = listOf(
-            AvialiableDrinksFragment.newInstance(),
-            PurchasedDrinksFragment.newInstance()
-        )
-    private val tabList = listOf(
-        "Drinks", "Purchased"
-    )
-    val adapter = ViewPagerAdapter(this, FragmentsList)
-
 
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        findNavController(R.id.nav_host_fragment)
+
+
         with(binding) {
+            val controller = findNavController(R.id.nav_host_fragment)
+            bottomNavigationView.selectedItemId = R.id.home
+            bottomNavigationView.setOnItemSelectedListener {
+                when (it.itemId) {
+                    R.id.home -> controller.navigate(R.id.homeFragment)
+
+                    R.id.work -> controller.navigate(R.id.menuListFragment)
+                    R.id.drinks -> controller.navigate(R.id.drinksFragment)
+
+
+                    R.id.report -> controller.navigate(R.id.reportFragment)
+
+
+                }
+                true
+            }
+
             actionBar.ivMenu.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
             }
-            viewPager.adapter = adapter
-            TabLayoutMediator(tabLayout, viewPager) { tab, pos ->
-                tab.text = tabList[pos]
-            }.attach()
-            //openFrag(AvialiableDrinksFragment(),R.id.place_holder)
-
         }
+
     }
-    
+
+    override fun onSupportNavigateUp(): Boolean {
+        val controller = findNavController(R.id.nav_host_fragment)
+        return controller.navigateUp() || super.onSupportNavigateUp()
+    }
+
 
     private fun openFrag(f: Fragment, idHolder: Int) {
         supportFragmentManager.beginTransaction().replace(idHolder, f).commit()
 
     }
 
-    }
+}
 
 
 

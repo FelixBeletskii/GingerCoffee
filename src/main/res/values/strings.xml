@@ -15,4 +15,7 @@
     <string name="hello_blank_fragment" translatable="false">Hello Blank Fragment</string>
     <string name="drinks">Drinks</string>
     <string name="purchased">Purchased</string>
+    <string name="welcome_home">Welcome to home page!</string>
+    <string name="report_main">Here will be your reports</string>
+    <string name="drinks_main">Here will be drinks \n which you cooked</string>
 </resources>
