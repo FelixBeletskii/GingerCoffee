@@ -17,7 +17,6 @@ import com.example.gingercoffee.databinding.FragmentPurchasedDrinksBinding
 class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
 
 
-
     private val adapter = DrinkAdapter(this)
     private val model: DataModel by activityViewModels()
     var purchasedDrinks = mutableListOf<Drink>(
@@ -35,8 +34,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPurchasedDrinksBinding.inflate(inflater)
         return binding.root
@@ -56,8 +54,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     companion object {
 
         @JvmStatic
-        fun newInstance() =
-            PurchasedDrinksFragment()
+        fun newInstance() = PurchasedDrinksFragment()
     }
 
     override fun onClick(drink: Drink) {
@@ -65,8 +62,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     }
 
 
-
-        }
+}
 
 
 
