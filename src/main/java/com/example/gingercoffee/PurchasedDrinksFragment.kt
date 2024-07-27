@@ -1,27 +1,20 @@
 package com.example.gingercoffee
 
-import android.location.GnssAntennaInfo.Listener
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gingercoffee.data.Drink
-import com.example.gingercoffee.data.model.DrinkAdapter
+import com.example.gingercoffee.data.DrinkAdapter
 import com.example.gingercoffee.databinding.FragmentPurchasedDrinksBinding
-import com.example.gingercoffee.databinding.ItemDrinkBinding
 
 
 class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
-
 
 
     private val adapter = DrinkAdapter(this)
@@ -41,8 +34,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPurchasedDrinksBinding.inflate(inflater)
         return binding.root
@@ -62,8 +54,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     companion object {
 
         @JvmStatic
-        fun newInstance() =
-            PurchasedDrinksFragment()
+        fun newInstance() = PurchasedDrinksFragment()
     }
 
     override fun onClick(drink: Drink) {
@@ -71,8 +62,7 @@ class PurchasedDrinksFragment : Fragment(), DrinkAdapter.Listener {
     }
 
 
-
-        }
+}
 
 
 
